@@ -25,14 +25,14 @@ Toda la ropa interior se vende exclusivamente en **packs de 4 unidades** con col
 
 | Producto | Material y Características | Precio (Pack 4) | Imágenes Principales |
 | :--- | :--- | :--- | :--- |
-| **Calzón Niña** | 100% Algodón. Comodidad diaria para las más pequeñas. | $3.000 | `Calzon Niña algodon.jpg` |
+| **Calzón Niña** | 100% Algodón. Comodidad diaria para las más pequeñas. | $3.300 ($3.000 con 10% OFF) | `Calzon Niña algodon.jpg` |
 | **Calzón Juvenil** | Algodón. Ajuste ideal para el crecimiento. | $5.000 | `Calzon Juvenil.png`, `Calzon Juvenil maniqui.png` |
 | **Pantaleta Juvenil** | Algodón con diseño. Estilo moderno y cómodo. | $5.000 | `Pantaleta juvenil.jpg`, `Pantineta juvrenil precio.jpg` |
-| **Calzón Dama** | 100% Algodón. Frescura e higiene garantizadas. | $6.000 | `Calzones Adulto Algodon.jpg`, `Calzon Adulto maniqui.png` |
-| **Colaless Dama** | Encaje y Lycra. Elegancia y elasticidad. | $5.000 | `Colaless con maniqui.jpg` |
-| **Pantaleta Dama** | Encaje y Microfibra. Suavidad con detalles finos. | $6.000 | `Pantaletas con encaje.jpg`, `Pantaleta con  encaje.jpg` |
-| **Bóxer Corto Varón** | Lycra con diseño. Soporte con estilo moderno. | $6.000 | `Pack Boxer corto con diseño.jpg`, `Boxer corto Diseño Lycra Maniqui.png` |
-| **Bóxer Largo Varón** | Lycra de color entero. Cobertura total y suavidad. | $6.000 | `Boxer largo Lycra maniqui.png` |
+| **Calzón Mujer** | 100% Algodón. Frescura e higiene garantizadas. | $6.600 ($6.000 con 10% OFF) | `Calzones Adulto Algodon.jpg`, `Calzon Adulto maniqui.png` |
+| **Colaless Mujer** | Encaje y Lycra. Elegancia y elasticidad. | $5.000 | `Colaless con maniqui.jpg` |
+| **Pantaleta Mujer** | Encaje y Microfibra. Suavidad con detalles finos. | $6.000 | `Pantaletas con encaje.jpg`, `Pantaleta con  encaje.jpg` |
+| **Bóxer Corto Hombre** | Lycra con diseño. Soporte con estilo moderno. | $6.000 | `Pack Boxer corto con diseño.jpg`, `Boxer corto Diseño Lycra Maniqui.png` |
+| **Bóxer Largo Hombre** | Lycra de color entero. Cobertura total y suavidad. | $6.000 | `Boxer largo Lycra maniqui.png` |
 | **Bóxer Largo Algodón** | Algodón a rayas. El confort clásico. | $8.000 | `12 Boxer largo de algodon.jpg` |
 
 ### 2.2 Indumentaria de Trabajo
@@ -40,9 +40,9 @@ Productos confeccionados en **Tela Bistrech (100% poliéster)**, conocida por su
 
 | Producto | Especificaciones Técnicas | Precio Sugerido | Variantes y Medidas |
 | :--- | :--- | :--- | :--- |
-| **Delantal Pechera Básico Cuello V** | Medidas: 48x70 cm. Cuello V, tiras laterales, 2 bolsillos frontales y cierre interior. Pack de 4 (colores al azar). | $8.000 (Pack 4) | Colores: Rojo, Azul, Azul Oscuro, Burdeo, Morado, Negro, Verde Botella. Medidas: `medida.png` |
-| **Delantal Chefs** | Medidas: 64x76 cm. Ajuste lateral, dos bolsillos amplios. Diseño unisex profesional. Lavable a máquina. | $4.500 (Unidad) | Colores: Blanco, Negro. Medidas: `Chef con medida.jpg` |
-| **Delantal Rojo Chino** | Modelo adicional encontrado en imágenes. Tiras cruzadas en la espalda, color rojo. | $4.000 (Unidad) | Imagen: `Delantal Rojo Chino.png`. Medidas: `Medidas chino.png` |
+| **Delantal Pechera Básico Cuello V** | Medidas: 48x70 cm. Cuello V, tiras laterales, 2 bolsillos frontales y cierre interior. Pack de 4 (colores al azar). | $12.500 ($10.000 con 20% OFF) | Colores: Rojo, Azul, Azul Oscuro, Burdeo, Morado, Negro, Verde Botella. Medidas: `medida.png` |
+| **Delantal Chefs** | Medidas: 64x76 cm. Ajuste lateral, dos bolsillos amplios. Diseño unisex profesional. Lavable a máquina. | $5.000 ($4.500 con 10% OFF) | Colores: Blanco, Negro. Medidas: `Chef con medida.jpg` |
+| **Delantal Rojo Chino** | Modelo adicional encontrado en imágenes. Tiras cruzadas en la espalda, color rojo. | $3.300 ($3.000 con 10% OFF) | Imagen: `Delantal Rojo Chino.png`. Medidas: `Medidas chino.png` |
 
 ---
 
@@ -51,7 +51,7 @@ Productos confeccionados en **Tela Bistrech (100% poliéster)**, conocida por su
 1. **Filtros Dinámicos Interactivos:**
    - Barra de búsqueda de productos con respuesta en tiempo real.
    - Categorías principales en pestañas para fácil navegación.
-   - Filtrado secundario por público objetivo (Dama, Varón, Niña, Profesional) y por tipo de material (Algodón, Lycra, Bistrech).
+   - Filtrado secundario por público objetivo (Mujer, Hombre, Niña, Profesional) y por tipo de material (Algodón, Lycra, Bistrech).
 2. **Modal de Ficha Técnica:**
    - Al hacer clic en cualquier producto, se despliega un modal elegante con la información extendida.
    - Carrusel de fotos interactivo que incluye las variaciones de colores del producto y los croquis con sus medidas exactas.
