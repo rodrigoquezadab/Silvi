@@ -3,12 +3,12 @@
 :root {
   --font-primary: 'Plus Jakarta Sans', sans-serif;
   
-  /* Harmonious Sleek Celeste/Blue Colors */
-  --color-brand-50: #f0f9ff;
-  --color-brand-100: #e0f2fe;
-  --color-brand-500: #0ea5e9;
-  --color-brand-600: #0284c7;
-  --color-brand-700: #0369a1;
+  /* Flores Chile Inspired Fuchsia/Rose Color Palette */
+  --color-brand-50: #fff1f2;
+  --color-brand-100: #ffe4e6;
+  --color-brand-500: #db2777;
+  --color-brand-600: #be185d;
+  --color-brand-700: #9d174d;
   
   --color-dark-800: #1e1e24;
   --color-dark-900: #121214;
@@ -16,7 +16,7 @@
 
 body {
   font-family: var(--font-primary);
-  background-color: #f0f9ff;
+  background-color: #ffffff;
   color: #1f2937;
   scroll-behavior: smooth;
 }
@@ -31,11 +31,11 @@ body {
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #bae6fd;
+  background: #fbcfe8;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7dd3fc;
+  background: #f472b6;
 }
 
 /* Glassmorphism Classes */
@@ -56,31 +56,22 @@ body {
 
 .glass-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(2, 132, 199, 0.08), 0 10px 10px -5px rgba(2, 132, 199, 0.04);
-  border-color: rgba(2, 132, 199, 0.2);
-}
-
-.glass-modal {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 25px -5px rgba(190, 24, 93, 0.08), 0 10px 10px -5px rgba(190, 24, 93, 0.04);
 }
 
 /* Gradient text and borders */
 .text-gradient {
-  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #4f46e5 100%);
+  background: linear-gradient(135deg, #be185d 0%, #db2777 50%, #701a75 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-gradient-brand {
-  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #3b82f6 100%);
+  background: linear-gradient(135deg, #be185d 0%, #db2777 50%, #ec4899 100%);
 }
 
 .bg-gradient-hero {
-  background: radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.15) 0%, rgba(56, 189, 248, 0.08) 30%, rgba(255, 255, 255, 0) 70%),
-              linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: #ffffff;
 }
 
 /* Custom Micro-Animations */
@@ -125,15 +116,15 @@ body {
 
 /* Active buttons */
 .btn-tab-active {
-  background-color: #0284c7;
-  color: white;
-  box-shadow: 0 4px 14px 0 rgba(2, 132, 199, 0.4);
+  background-color: #be185d !important;
+  color: white !important;
+  box-shadow: 0 4px 14px 0 rgba(190, 24, 93, 0.4) !important;
 }
 
 .btn-filter-active {
-  background-color: #e0f2fe;
-  color: #0369a1;
-  border-color: #7dd3fc;
+  background-color: #ffe4e6 !important;
+  color: #9d174d !important;
+  border-color: #fbcfe8 !important;
 }
 
 /* Image aspect ratio tweaks */
@@ -148,4 +139,34 @@ body {
 
 .glass-card:hover .product-card-img-container img {
   transform: scale(1.06);
+}
+
+/* Hero Carousel custom styles */
+#carousel-slides > div {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#carousel-dots button {
+  background-color: #cbd5e1; /* slate-300 */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#carousel-dots button.active-dot {
+  width: 24px;
+  background-color: #be185d; /* brand-600 */
+  opacity: 1;
+}
+
+#carousel-prev, #carousel-next {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#carousel-prev:hover, #carousel-next:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-50%) scale(1.08);
+}
+
+#carousel-prev:active, #carousel-next:active {
+  transform: translateY(-50%) scale(0.95);
 }

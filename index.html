@@ -24,14 +24,14 @@
         extend: {
           colors: {
             brand: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              200: '#bae6fd',
-              300: '#7dd3fc',
-              500: '#0ea5e9',
-              600: '#0284c7',
-              700: '#0369a1',
-              900: '#0c4a6e',
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              200: '#fbcfe8',
+              300: '#f472b6',
+              500: '#db2777',
+              600: '#be185d',
+              700: '#9d174d',
+              900: '#500724',
             }
           }
         }
@@ -48,16 +48,21 @@
 <body class="bg-gradient-hero min-h-screen flex flex-col">
 
   <!-- Barra de navegación (Glassmorphism) -->
+  <!-- Barra de promociones superior (Estilo Flores) -->
+  <div class="bg-brand-600 text-white text-center py-2.5 px-4 text-xs font-extrabold tracking-wider shadow-sm z-50 relative">
+    ✨ VENTA MAYORISTA Y AL DETALLE - PRECIOS PREFERENCIALES POR VOLUMEN ✨
+  </div>
+
   <header class="glass-nav sticky top-0 z-40 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <div class="flex-shrink-0 flex flex-col">
+        <div class="flex-shrink-0 flex flex-col cursor-pointer hover:opacity-85 transition-opacity" onclick="showCatalog()">
           <span class="text-2xl font-black tracking-tight text-gradient">Textil y Hogar</span>
           <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Catálogo Oficial</span>
         </div>
         
         <!-- Botón de Contacto Rápido Cabecera -->
-        <a href="#contacto" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-brand hover:opacity-90 active:scale-95 text-white text-xs font-bold rounded-2xl transition-all shadow-md shadow-sky-500/20">
+        <a href="#contacto" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-brand hover:opacity-90 active:scale-95 text-white text-xs font-bold rounded-2xl transition-all shadow-md shadow-brand-500/20">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
           <span>Venta Presencial</span>
         </a>
@@ -66,16 +71,217 @@
   </header>
 
   <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-    
-    <!-- Hero / Presentación -->
-    <section class="text-center max-w-3xl mx-auto mb-12 animate-fade-in-scale">
-      <span class="px-3 py-1 bg-sky-100 text-sky-700 text-xs font-bold rounded-full uppercase tracking-wider">Distribución Directa</span>
-      <h1 class="text-4xl sm:text-5xl font-black text-gray-900 mt-4 tracking-tight leading-none">
-        Calidad y Comodidad para tu <span class="text-gradient">Familia y Trabajo</span>
-      </h1>
-      <p class="text-base sm:text-lg text-gray-500 mt-4 leading-relaxed">
-        Explora nuestro catálogo exclusivo de confecciones. Ofrecemos ropa interior 100% algodón por packs e indumentaria de trabajo duradera en tela Bistrech. <strong>Venta directa presencial.</strong>
-      </p>
+    <div id="catalog-view" class="transition-all duration-300">
+      
+      <!-- Banner de Bienvenida -->
+      <section class="text-center max-w-4xl mx-auto mt-4 mb-10 px-4 animate-fade-in-scale">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-brand-50 text-brand-700 text-[10px] sm:text-xs font-black uppercase tracking-wider border border-brand-100">
+          ✨ Bienvenidos a Textil y Hogar
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight mt-4">
+          Calidad y Comodidad para tu <span class="text-gradient">Familia y Trabajo</span>
+        </h1>
+        <p class="text-sm sm:text-base text-gray-500 mt-3 max-w-2xl mx-auto leading-relaxed font-medium">
+          Explora nuestro catálogo exclusivo de confecciones de fábrica. Ofrecemos ropa interior de algodón por packs e indumentaria de trabajo duradera en tela Bistrech. ¡Venta directa presencial en Santiago!
+        </p>
+      </section>
+
+      <!-- Hero / Deslizador de Destacados Multitarjeta -->
+      <section id="carousel-section" class="max-w-7xl mx-auto mb-10 relative px-10 sm:px-12 h-[460px] group overflow-hidden">
+      <!-- Diapositivas Container -->
+      <div id="carousel-slides" class="flex transition-transform duration-500 ease-out h-[400px] w-full mt-2">
+        
+        <!-- Slide 1: IT01 -->
+        <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 p-3 flex flex-col h-full select-none" onclick="showProductDetail('IT01')">
+          <div class="bg-white border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full cursor-pointer relative">
+            <span class="absolute top-3 left-3 z-10 bg-brand-600/90 text-white text-[9px] font-extrabold px-2 py-0.5 uppercase tracking-wider shadow-sm">Destacado</span>
+            <div class="h-48 w-full bg-gray-50 flex items-center justify-center relative overflow-hidden shrink-0">
+              <img src="Media/Morado.jpg" class="w-full h-full object-contain p-2" alt="Delantal Pechera Básico">
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-500">Profesional</span>
+                  <span class="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">Bistrech</span>
+                </div>
+                <h3 class="text-sm font-extrabold text-gray-800 leading-tight line-clamp-1 mb-1">Delantal Pechera Básico Cuello V</h3>
+                <p class="text-xs text-gray-500 line-clamp-2">Excelente combinación de elegancia y resistencia para el trabajo intenso diario.</p>
+              </div>
+              <div class="pt-3 border-t border-gray-50 flex items-end justify-between mt-2">
+                <div>
+                  <div class="flex flex-col">
+                    <span class="text-[9px] text-gray-400 line-through">Antes: $12.500</span>
+                    <span class="text-sm font-black text-rose-600">Ahora: $10.000</span>
+                  </div>
+                  <div class="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Pack de 4</div>
+                </div>
+                <button class="px-3 py-1.5 bg-brand-600 hover:bg-brand-700 text-white text-[10px] font-bold uppercase tracking-wider transition-all pointer-events-none">Ver Ficha</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: RI04 -->
+        <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 p-3 flex flex-col h-full select-none" onclick="showProductDetail('RI04')">
+          <div class="bg-white border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full cursor-pointer relative">
+            <span class="absolute top-3 left-3 z-10 bg-brand-600/90 text-white text-[9px] font-extrabold px-2 py-0.5 uppercase tracking-wider shadow-sm">Más Vendido</span>
+            <div class="h-48 w-full bg-gray-50 flex items-center justify-center relative overflow-hidden shrink-0">
+              <img src="Media/Calzones Adulto Algodon.jpg" class="w-full h-full object-contain p-2" alt="Calzón de Mujer Algodón">
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-500">Mujer</span>
+                  <span class="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">Algodón</span>
+                </div>
+                <h3 class="text-sm font-extrabold text-gray-800 leading-tight line-clamp-1 mb-1">Calzón de Mujer de Algodón</h3>
+                <p class="text-xs text-gray-500 line-clamp-2">Frescura y máxima higiene garantizada. Un modelo clásico de tiro medio-alto.</p>
+              </div>
+              <div class="pt-3 border-t border-gray-50 flex items-end justify-between mt-2">
+                <div>
+                  <div class="flex flex-col">
+                    <span class="text-[9px] text-gray-400 line-through">Antes: $6.600</span>
+                    <span class="text-sm font-black text-rose-600">Ahora: $6.000</span>
+                  </div>
+                  <div class="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Pack de 4</div>
+                </div>
+                <button class="px-3 py-1.5 bg-brand-600 hover:bg-brand-700 text-white text-[10px] font-bold uppercase tracking-wider transition-all pointer-events-none">Ver Ficha</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: IT02 -->
+        <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 p-3 flex flex-col h-full select-none" onclick="showProductDetail('IT02')">
+          <div class="bg-white border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full cursor-pointer relative">
+            <span class="absolute top-3 left-3 z-10 bg-brand-600/90 text-white text-[9px] font-extrabold px-2 py-0.5 uppercase tracking-wider shadow-sm">Recomendado</span>
+            <div class="h-48 w-full bg-gray-50 flex items-center justify-center relative overflow-hidden shrink-0">
+              <img src="Media/Chef.jpg" class="w-full h-full object-contain p-2" alt="Delantal de Chefs">
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-500">Profesional</span>
+                  <span class="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">Bistrech</span>
+                </div>
+                <h3 class="text-sm font-extrabold text-gray-800 leading-tight line-clamp-1 mb-1">Delantal de Chefs Profesional</h3>
+                <p class="text-xs text-gray-500 line-clamp-2">Diseño simple y unisex con máxima flexibilidad profesional. Dos bolsillos amplios.</p>
+              </div>
+              <div class="pt-3 border-t border-gray-50 flex items-end justify-between mt-2">
+                <div>
+                  <div class="flex flex-col">
+                    <span class="text-[9px] text-gray-400 line-through">Antes: $5.000</span>
+                    <span class="text-sm font-black text-rose-600">Ahora: $4.500</span>
+                  </div>
+                  <div class="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Por unidad</div>
+                </div>
+                <button class="px-3 py-1.5 bg-brand-600 hover:bg-brand-700 text-white text-[10px] font-bold uppercase tracking-wider transition-all pointer-events-none">Ver Ficha</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: IT03 -->
+        <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 p-3 flex flex-col h-full select-none" onclick="showProductDetail('IT03')">
+          <div class="bg-white border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full cursor-pointer relative">
+            <span class="absolute top-3 left-3 z-10 bg-brand-600/90 text-white text-[9px] font-extrabold px-2 py-0.5 uppercase tracking-wider shadow-sm">Novedad</span>
+            <div class="h-48 w-full bg-gray-50 flex items-center justify-center relative overflow-hidden shrink-0">
+              <img src="Media/Delantal Rojo Chino.png" class="w-full h-full object-contain p-2" alt="Delantal Rojo Cruzado">
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-500">Profesional</span>
+                  <span class="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">Bistrech</span>
+                </div>
+                <h3 class="text-sm font-extrabold text-gray-800 leading-tight line-clamp-1 mb-1">Delantal Rojo Cruzado (Chino)</h3>
+                <p class="text-xs text-gray-500 line-clamp-2">Diseño ergonómico cruzado en la espalda que distribuye el peso de manera uniforme.</p>
+              </div>
+              <div class="pt-3 border-t border-gray-50 flex items-end justify-between mt-2">
+                <div>
+                  <div class="flex flex-col">
+                    <span class="text-[9px] text-gray-400 line-through">Antes: $3.300</span>
+                    <span class="text-sm font-black text-rose-600">Ahora: $3.000</span>
+                  </div>
+                  <div class="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Por unidad</div>
+                </div>
+                <button class="px-3 py-1.5 bg-brand-600 hover:bg-brand-700 text-white text-[10px] font-bold uppercase tracking-wider transition-all pointer-events-none">Ver Ficha</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5: RI01 -->
+        <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 p-3 flex flex-col h-full select-none" onclick="showProductDetail('RI01')">
+          <div class="bg-white border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full cursor-pointer relative">
+            <span class="absolute top-3 left-3 z-10 bg-brand-600/90 text-white text-[9px] font-extrabold px-2 py-0.5 uppercase tracking-wider shadow-sm">Oferta</span>
+            <div class="h-48 w-full bg-gray-50 flex items-center justify-center relative overflow-hidden shrink-0">
+              <img src="Media/Calzon Niña algodon.jpg" class="w-full h-full object-contain p-2" alt="Calzón Niña Algodón">
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-500">Niña</span>
+                  <span class="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">Algodón</span>
+                </div>
+                <h3 class="text-sm font-extrabold text-gray-800 leading-tight line-clamp-1 mb-1">Calzón Niña de Algodón</h3>
+                <p class="text-xs text-gray-500 line-clamp-2">Comodidad diaria para las más pequeñas con un ajuste suave e higiénico.</p>
+              </div>
+              <div class="pt-3 border-t border-gray-50 flex items-end justify-between mt-2">
+                <div>
+                  <div class="flex flex-col">
+                    <span class="text-[9px] text-gray-400 line-through">Antes: $3.300</span>
+                    <span class="text-sm font-black text-rose-600">Ahora: $3.000</span>
+                  </div>
+                  <div class="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Pack de 4</div>
+                </div>
+                <button class="px-3 py-1.5 bg-brand-600 hover:bg-brand-700 text-white text-[10px] font-bold uppercase tracking-wider transition-all pointer-events-none">Ver Ficha</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 6: RI02 -->
+        <div class="w-full md:w-1/2 lg:w-1/3 shrink-0 p-3 flex flex-col h-full select-none" onclick="showProductDetail('RI02')">
+          <div class="bg-white border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full cursor-pointer relative">
+            <span class="absolute top-3 left-3 z-10 bg-brand-600/90 text-white text-[9px] font-extrabold px-2 py-0.5 uppercase tracking-wider shadow-sm">Básico</span>
+            <div class="h-48 w-full bg-gray-50 flex items-center justify-center relative overflow-hidden shrink-0">
+              <img src="Media/Calzon Juvenil.png" class="w-full h-full object-contain p-2" alt="Calzón Juvenil Algodón">
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-500">Niña</span>
+                  <span class="text-[10px] font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">Algodón</span>
+                </div>
+                <h3 class="text-sm font-extrabold text-gray-800 leading-tight line-clamp-1 mb-1">Calzón Juvenil de Algodón</h3>
+                <p class="text-xs text-gray-500 line-clamp-2">Ajuste ideal adaptado para las etapas de crecimiento, garantizando frescura.</p>
+              </div>
+              <div class="pt-3 border-t border-gray-50 flex items-end justify-between mt-2">
+                <div>
+                  <div class="text-sm font-black text-brand-600">$5.000</div>
+                  <div class="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Pack de 4</div>
+                </div>
+                <button class="px-3 py-1.5 bg-brand-600 hover:bg-brand-700 text-white text-[10px] font-bold uppercase tracking-wider transition-all pointer-events-none">Ver Ficha</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles de Flechas (Alineados a los lados, fuera de las tarjetas) -->
+      <button id="carousel-prev" class="absolute left-1 top-[200px] -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/75 hover:bg-white active:scale-95 text-brand-600 flex items-center justify-center rounded-full shadow-md backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all z-20 focus:outline-none border border-gray-150">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <button id="carousel-next" class="absolute right-1 top-[200px] -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/75 hover:bg-white active:scale-95 text-brand-600 flex items-center justify-center rounded-full shadow-md backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all z-20 focus:outline-none border border-gray-150">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+
+      <!-- Indicadores de Puntos (Dots - Ubicados abajo sin solapar el contenido) -->
+      <div id="carousel-dots" class="absolute bottom-2 inset-x-0 h-10 flex justify-center items-center gap-2 z-20">
+        <!-- Dinámicos -->
+      </div>
     </section>
 
     <!-- Panel de Búsqueda y Filtros -->
@@ -89,10 +295,10 @@
             <button class="category-tab btn-tab-active flex-1 sm:flex-initial px-5 py-2.5 text-xs sm:text-sm font-bold rounded-xl transition-all duration-300" data-category="all">
               Todos
             </button>
-            <button class="category-tab px-5 py-2.5 flex-1 sm:flex-initial text-xs sm:text-sm font-bold text-gray-500 hover:text-sky-600 rounded-xl transition-all duration-300" data-category="ropa-interior">
+            <button class="category-tab px-5 py-2.5 flex-1 sm:flex-initial text-xs sm:text-sm font-bold text-gray-500 hover:text-brand-600 rounded-xl transition-all duration-300" data-category="ropa-interior">
               Ropa Interior
             </button>
-            <button class="category-tab px-5 py-2.5 flex-1 sm:flex-initial text-xs sm:text-sm font-bold text-gray-500 hover:text-sky-600 rounded-xl transition-all duration-300" data-category="indumentaria-trabajo">
+            <button class="category-tab px-5 py-2.5 flex-1 sm:flex-initial text-xs sm:text-sm font-bold text-gray-500 hover:text-brand-600 rounded-xl transition-all duration-300" data-category="indumentaria-trabajo">
               Trabajo
             </button>
           </div>
@@ -102,7 +308,7 @@
             <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </span>
-            <input type="text" id="search-input" placeholder="Buscar producto, material, talla..." class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 focus:border-sky-400 focus:bg-white text-sm rounded-2xl transition-all focus:outline-none focus:ring-4 focus:ring-sky-100 placeholder-gray-400 font-medium">
+            <input type="text" id="search-input" placeholder="Buscar producto, material, talla..." class="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 focus:border-brand-400 focus:bg-white text-sm rounded-2xl transition-all focus:ring-4 focus:ring-brand-100 placeholder-gray-400 font-medium">
           </div>
         </div>
 
@@ -149,155 +355,58 @@
       <div class="relative z-10 max-w-2xl">
         <span class="bg-white/20 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Políticas de Calidad</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold mt-4 leading-tight">Compromiso en cada costura</h2>
-        <p class="text-sm sm:text-base text-sky-100 mt-3 leading-relaxed">
+        <p class="text-sm sm:text-base text-pink-100 mt-3 leading-relaxed">
           Nuestra ropa interior de dama y niña está confeccionada exclusivamente en <strong>100% Algodón higiénico</strong> para cuidar la salud y piel de tu familia. Además, nuestra línea de delantales de trabajo utiliza <strong>tela Bistrech (100% poliéster)</strong> de estructura firme que no se deforma, no se estira y no requiere planchado.
         </p>
         
         <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-6">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5 text-sky-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              <svg class="w-5 h-5 text-pink-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
             <div>
               <h4 class="text-sm font-bold">100% Garantizado</h4>
-              <p class="text-xs text-sky-100">Materiales seleccionados</p>
+              <p class="text-xs text-pink-100">Materiales seleccionados</p>
             </div>
           </div>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5 text-sky-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              <svg class="w-5 h-5 text-pink-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
             </div>
             <div>
               <h4 class="text-sm font-bold">Sin Planchado</h4>
-              <p class="text-xs text-sky-100">Bistrech fácil mantenimiento</p>
+              <p class="text-xs text-pink-100">Bistrech fácil mantenimiento</p>
             </div>
           </div>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-              <svg class="w-5 h-5 text-sky-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              <svg class="w-5 h-5 text-pink-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
             </div>
             <div>
               <h4 class="text-sm font-bold">Venta Mayorista</h4>
-              <p class="text-xs text-sky-100">Precios preferenciales por volumen</p>
+              <p class="text-xs text-pink-100">Precios preferenciales por volumen</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+    </div> <!-- /catalog-view -->
+
+    <!-- Vista de Detalle de Producto en Página (Sin Modal) -->
+    <section id="product-detail-view" class="hidden bg-white p-6 sm:p-12 shadow-sm border border-gray-150 animate-fade-in-up max-w-7xl mx-auto rounded-none mb-12">
+      <!-- El contenido se inyectará dinámicamente mediante JS -->
+    </section>
 
   </main>
 
-  <!-- Modal de Detalles del Producto -->
-  <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto">
-    <div class="glass-modal w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl relative animate-fade-in-scale flex flex-col md:flex-row my-auto max-h-[90vh] md:max-h-[85vh]">
-      
-      <!-- Botón de Cerrar Modal (Flotante) -->
-      <button onclick="closeProductModal()" class="absolute top-4 right-4 z-20 w-9 h-9 flex items-center justify-center bg-white/80 hover:bg-white text-gray-600 hover:text-gray-800 rounded-full shadow transition-all focus:outline-none" aria-label="Cerrar modal">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-
-      <!-- Panel Izquierdo: Galería / Carrusel -->
-      <div class="w-full md:w-1/2 p-6 flex flex-col gap-4 bg-gray-50 border-r border-gray-100 md:max-h-full overflow-y-auto">
-        <!-- Contenedor Imagen Principal -->
-        <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-white shadow-sm flex items-center justify-center border border-gray-100 relative shrink-0">
-          <img id="modal-main-image" src="" alt="Producto" class="w-full h-full object-cover">
-        </div>
-        
-        <!-- Carrusel de Miniaturas -->
-        <div class="flex flex-col gap-1.5">
-          <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-1">Variantes de colores y medidas:</span>
-          <div id="modal-thumbnails" class="flex gap-2.5 overflow-x-auto pb-2 no-scrollbar scroll-smooth">
-            <!-- Dinámico desde JS -->
-          </div>
-        </div>
-
-        <!-- Mensaje Informativo de Colores Surtidos -->
-        <div class="mt-1 bg-amber-50 border border-amber-200 rounded-2xl p-4 flex gap-2.5">
-          <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <div class="text-xs text-amber-800 leading-relaxed font-medium">
-            <span class="font-bold">Nota importante:</span> Los colores y estampados se envían en combinaciones al azar según stock disponible.
-          </div>
-        </div>
-      </div>
-
-      <!-- Panel Derecho: Información Técnica -->
-      <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between md:max-h-full overflow-y-auto">
-        <div>
-          <!-- Categorías e Insignias -->
-          <div class="flex items-center gap-2 mb-2.5">
-            <span id="modal-category" class="text-xs font-bold uppercase tracking-wider text-sky-600 bg-sky-50 px-2.5 py-1 rounded-lg">Ropa Interior</span>
-            <span id="modal-material" class="text-xs font-bold text-gray-500 bg-gray-100 px-2.5 py-1 rounded-lg">Algodón</span>
-          </div>
-
-          <!-- Título -->
-          <h2 id="modal-title" class="text-2xl sm:text-3xl font-black text-gray-900 leading-tight mb-4">Título del Producto</h2>
-
-          <!-- Precio -->
-          <div class="flex items-baseline gap-2 mb-6 bg-sky-50/50 p-4 rounded-2xl border border-sky-100/50">
-            <span id="modal-price" class="text-3xl font-black text-sky-600">\$0.000</span>
-            <span id="modal-unit" class="text-xs font-bold text-gray-400 uppercase tracking-wider">Pack de 4</span>
-          </div>
-
-          <!-- Descripción -->
-          <p id="modal-description" class="text-sm text-gray-600 leading-relaxed mb-6 font-medium">Descripción extendida.</p>
-
-          <!-- Colores disponibles -->
-          <div class="mb-6">
-            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Colores Disponibles</h4>
-            <div id="modal-colors-container" class="flex flex-wrap gap-2">
-              <!-- Dinámico -->
-            </div>
-          </div>
-
-          <!-- Características principales -->
-          <div class="mb-6">
-            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Especificaciones Técnicas</h4>
-            <ul id="modal-features-list" class="space-y-2">
-              <!-- Dinámico -->
-            </ul>
-          </div>
-
-          <!-- Ficha de Dimensiones e Información extra -->
-          <div class="grid grid-cols-2 gap-4 border-t border-gray-100 pt-6 mb-6">
-            <div>
-              <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Medidas:</span>
-              <span id="modal-dimensions" class="text-sm font-semibold text-gray-700">64x76 cm</span>
-            </div>
-            <div>
-              <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Usos comunes:</span>
-              <span id="modal-uses" class="text-sm font-semibold text-gray-700">Cocina / Chefs</span>
-            </div>
-          </div>
-
-          <div class="border-t border-gray-100 pt-6 mb-8">
-            <span class="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">Recomendaciones de cuidado:</span>
-            <p id="modal-recommendations" class="text-xs text-gray-500 leading-relaxed font-medium">Instrucciones de lavado.</p>
-          </div>
-        </div>
-
-        <!-- Botones de compra / contacto -->
-        <div class="mt-auto pt-6 border-t border-gray-100 flex flex-col gap-3">
-          <button id="modal-whatsapp-btn" class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white font-bold rounded-2xl transition-all shadow-lg shadow-emerald-600/10 flex items-center justify-center gap-2">
-            <!-- Icono Whatsapp -->
-            <i class="fa-brands fa-whatsapp text-xl"></i>
-            <span>Consultar Disponibilidad</span>
-          </button>
-          
-          <button onclick="closeProductModal()" class="w-full py-3.5 bg-gray-100 hover:bg-gray-200 active:scale-[0.98] text-gray-700 text-sm font-bold rounded-2xl transition-all">
-            Cerrar Ficha
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
+  <!-- Ficha de producto en modal removida. Usando vista en página. -->
 
   <!-- Sección de Ubicación y Contacto -->
   <section id="contacto" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full border-t border-gray-100 animate-fade-in-up">
     <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-10 items-stretch">
       <div class="w-full lg:w-1/2 flex flex-col justify-between">
         <div>
-          <span class="px-3 py-1 bg-sky-100 text-sky-700 text-xs font-bold rounded-full uppercase tracking-wider">¿Cómo comprar?</span>
+          <span class="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full uppercase tracking-wider">¿Cómo comprar?</span>
           <h2 class="text-3xl font-black text-gray-900 mt-4 tracking-tight leading-none">Compra de Forma Presencial</h2>
           <p class="text-sm text-gray-500 mt-4 leading-relaxed font-medium">
             Por el momento, operamos exclusivamente como **catálogo digital de apoyo**. No realizamos cobros en línea para garantizar un servicio más seguro y personalizado. 
@@ -309,7 +418,7 @@
         
         <div class="mt-8 space-y-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
             </div>
             <div>
@@ -318,7 +427,7 @@
             </div>
           </div>
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
             <div>
